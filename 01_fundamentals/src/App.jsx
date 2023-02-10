@@ -12,6 +12,7 @@ import Straight from './components/comun/Straight'
 import NotStraight from './components/comun/NotStraight'
 import Input from './components/form/Input'
 import Cont from './components/cont/Cont'
+import Mega from './components/mega/Mega'
 
 const App = () => {
     return (
@@ -59,7 +60,11 @@ const App = () => {
                 </Card>
 
                 <Card title=" #10 - Class Counter" color="#4e5f56">
-                    <Cont num={20} />
+                    <Cont num={20} step={5} />
+                </Card>
+
+                <Card title=" #11 - Mega Challenge" color="#b9006e">
+                    <Mega qtyNum={7}/>
                 </Card>
             </div>
 

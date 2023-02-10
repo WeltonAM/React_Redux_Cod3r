@@ -1,0 +1,16 @@
+.cont input{
+    font-size: 1.4rem;
+    width: 70px;
+    margin: 10px;
+}
+
+.cont button{
+    font-size: 1.4rem;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #1499de;
+    margin: 10px;
+    color: #fff;
+}
