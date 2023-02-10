@@ -1,0 +1,11 @@
+.prodTable table{
+    width: 100%;
+}
+
+.prodTable th{
+    background-color: darkcyan;
+}
+
+.prodTable .even{
+    background-color: #ddd;
+}
