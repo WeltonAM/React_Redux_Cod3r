@@ -1,0 +1,19 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 250px;
+    background-color: dodgerblue;
+}
+
+.menu a{
+    margin-bottom: 2px;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    background: #00000010;
+}
+
+.menu a:hover{
+    background: #00000030;
+}
