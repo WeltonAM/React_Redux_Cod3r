@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Calculator.css'
 
 import Button from '../components/Button'
@@ -12,7 +12,7 @@ const Calculator = () => {
     const [values, setValues] = useState([0, 0])
     const [current, setCurrent] = useState(0)
 
-    const initialState = () => {
+    const clearMemory = () => {
         setDisplayValue('0')
         setClearDisplay(false)
         setOp(null)
@@ -20,12 +20,32 @@ const Calculator = () => {
         setCurrent(0)
     }
 
-    const clearMemory = () => {
-        initialState()
-    }
-
     const setOperation = (operation) => {
-        console.log(operation)
+        if(current === 0){
+            setOp(operation)
+            setCurrent(1)
+            setClearDisplay(true)
+        } else {
+            const equals = operation === '='
+            const currentOp = op
+            const newValues = [...values]
+
+            console.log(op, equals)
+
+            try {
+                newValues[0] = eval(`${newValues[0]} ${currentOp} ${newValues[1]}`)
+            } catch (error) {
+                newValues[0] = values[0]
+            }
+
+            newValues[1] = 0
+
+            setDisplayValue(newValues[0])
+            setOp(equals ? null : op)
+            setCurrent(equals ? 0 : 1)
+            setClearDisplay(!equals)
+            setValues(newValues) 
+        }
     }
 
     const addDigit = (n) => {
@@ -43,12 +63,8 @@ const Calculator = () => {
         setClearDisplay(false)
 
         if(n !== '.'){
-            const i = current
-            const newValue = parseFloat(displayValue)
-            const newValuesArr = [...values]
-            newValuesArr[i] = newValue
-            setValues(newValuesArr)
-            console.log(newValuesArr)
+            values[current] = parseFloat(newDisplayValue)
+            setValues(values)
         }
     }
 
@@ -57,7 +73,7 @@ const Calculator = () => {
             <Display value={displayValue} />
 
             <Button label="AC" triple click={() => clearMemory()} />
-            <Button label="/" operation  click={setOperation}/>
+            <Button label="/" operation click={setOperation}/>
             <Button label="7" click={addDigit} />
             <Button label="8" click={addDigit}/>
             <Button label="9" click={addDigit}/>
