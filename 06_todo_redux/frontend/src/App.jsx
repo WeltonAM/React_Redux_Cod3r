@@ -3,17 +3,29 @@ import 'bootstrap/dist/js/bootstrap'
 import 'font-awesome/css/font-awesome.min.css'
 import './App.css';
 import Menu from './components/Menu';
-import About from './pages/About';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Todo from './pages/Todo';
+import About from './pages/About';
 
 function App() {
+
   return (
     <div className="App">
-      <Menu />
+      <BrowserRouter>
+        <Menu />
 
-      <Todo />
+        <Routes>
 
-      <About/>
+          <Route path='/' element={<Todo />}/>
+
+          <Route path='/about' element={<About />}/>
+
+          <Route path="*" element={<Navigate to='/' />} />
+
+        </Routes>
+
+      </BrowserRouter>
+
     </div>
   );
 }
