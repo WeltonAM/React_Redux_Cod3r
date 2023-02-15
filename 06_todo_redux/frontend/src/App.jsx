@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap'
 import 'font-awesome/css/font-awesome.min.css'
 import './App.css';
 import Menu from './components/Menu';

@@ -1,24 +1,31 @@
-import React from 'react'
 
 const Menu = () => {
-  return (
-    <nav className='navbar navbar-inverse bg-inverse'>
-        <div className='container'>
-            <div className='navbar-header'>
-                <a href="#" className='navbar-brand'>
-                    <i className='fa fa-calendar-check-o'></i>
-                </a>
-            </div>
+    return (
 
-            <div id='navbar' className='navbar-collapse collapse'>
-                <ul className='nav navbar-nav'>
-                    <li><a href="#/todos">Tasks</a></li>
-                    <li><a href="#/about">About</a></li>
-                </ul>
+        <nav className="navbar navbar-expand-lg bg-dark-subtle">
+            <div className="container">
+                <a href="#" className='navbar-brand'>TodoApp <i className='fa fa-calendar-check-o'></i>
+                </a>
+
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li className="nav-item">
+                            <a className="nav-link" href="#/">Todo</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#/about">About</a>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-  )
+        </nav>
+    )
 }
 
 export default Menu
