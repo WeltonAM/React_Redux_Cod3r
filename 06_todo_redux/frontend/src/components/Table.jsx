@@ -1,6 +1,8 @@
 import React from 'react'
 import IconButton from './IconButton'
 import './Custom.css'
+import { connect } from 'react-redux'
+import { markAsDone, markAsPending, remove } from '../store/actions/todoActions'
 
 const Table = ({ list, handleRemove, handleMarkAsPending, handleMarkAsDone }) => {
 
@@ -59,4 +61,27 @@ const Table = ({ list, handleRemove, handleMarkAsPending, handleMarkAsDone }) =>
   )
 }
 
-export default Table
+const mapStateToProps = (state) => {
+  return {
+    list: state.todo.list
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+      handleMarkAsDone(task){
+          const action = markAsDone(task)
+          dispatch(action)
+      },
+      handleMarkAsPending(task){
+          const action = markAsPending(task)
+          dispatch(action)
+      },
+      handleRemove(task){
+          const action = remove(task)
+          dispatch(action)
+      },
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table)
