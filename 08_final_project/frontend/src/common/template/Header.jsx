@@ -1,3 +1,4 @@
+import ContentHeader from "./ContentHeader"
 
 const Header = () => {
     return (
@@ -7,14 +8,9 @@ const Header = () => {
                     <li className="nav-item">
                         <a className="nav-link" data-widget="pushmenu" role="button"><i className="fa fa-bars"></i></a>
                     </li>
-                    <li className="nav-item d-none d-sm-inline-block">
-                        <a className="nav-link">Home</a>
-                    </li>
-                    <li className="nav-item d-none d-sm-inline-block">
-                        <a className="nav-link">Contact</a>
-                    </li>
                 </ul>
             </nav>
+
         </header>
     )
 }

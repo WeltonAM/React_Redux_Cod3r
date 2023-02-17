@@ -1,29 +1,38 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Menu = () => {
     return (
-        <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
-            <li className="nav-item menu-open">
-                <a className="nav-link active">
-                    <i className="nav-icon fas fa-tachometer-alt"></i>
+        <ul 
+            className="nav nav-pills nav-sidebar flex-column" 
+            data-widget="treeview" 
+            role="menu"
+            style={{cursor: "pointer"}}
+        >
+            <li className="nav-item">
+                <Link className="nav-link">
+                    <i className="nav-icon fa fa-edit"></i>
                     <p>
-                        Starter Pages
+                        Register
                         <i className="right fa fa-angle-left"></i>
                     </p>
-                </a>
+                </Link>
+
                 <ul className="nav nav-treeview">
                     <li className="nav-item">
-                        <a className="nav-link active">
-                            <p>Active Page</p>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link">
-                            <p>Inactive Page</p>
-                        </a>
+                        <Link to="/billingCycles" className="nav-link">
+                            <i className="nav-icon fa fa-usd"></i>
+                            <p>Payment cycles</p>
+                        </Link>
                     </li>
                 </ul>
             </li>
+
+            {/* <li className="nav-item">
+                <Link className="nav-link">
+                    <i className="nav-icon fa fa-usd"></i>
+                    <p>Active Page</p>
+                </Link>
+            </li> */}
         </ul>
     )
 }
