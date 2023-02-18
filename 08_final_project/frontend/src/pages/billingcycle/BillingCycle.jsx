@@ -4,10 +4,10 @@ import ContentHeader from '../../common/template/ContentHeader'
 const BillingCycle = () => {
   return (
     <div className='content-wrapper'>
-      <ContentHeader title="Billing Cycle" small="Payment manager" />
+      <ContentHeader title="Ciclos de pagamento" small="Admnistrar recursos" />
         
         <Content>
-          Billing Cycle
+          Ciclos de Pagamento
         </Content>
     </div>
   )

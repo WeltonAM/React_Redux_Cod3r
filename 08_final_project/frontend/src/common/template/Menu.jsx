@@ -12,7 +12,7 @@ const Menu = () => {
                 <Link className="nav-link">
                     <i className="nav-icon fa fa-edit"></i>
                     <p>
-                        Register
+                        Cadastrar
                         <i className="right fa fa-angle-left"></i>
                     </p>
                 </Link>
@@ -21,7 +21,7 @@ const Menu = () => {
                     <li className="nav-item">
                         <Link to="/billingCycles" className="nav-link">
                             <i className="nav-icon fa fa-usd"></i>
-                            <p>Payment cycles</p>
+                            <p>Ciclos de pagamento</p>
                         </Link>
                     </li>
                 </ul>
