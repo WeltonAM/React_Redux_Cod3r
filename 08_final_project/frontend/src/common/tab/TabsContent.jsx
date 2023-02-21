@@ -1,21 +1,23 @@
 import { connect } from 'react-redux'
+import Conditional from '../operator/Conditional'
 
 const TabsContent = ({ id, content, tab }) => {
 
     const selected = tab.selected === id
+    const visible = tab.visible[id]
 
     return (
-        <>
-            <div 
-                className={'tab-pane fade show ' + (selected ? 'active' : '')} 
-                id={`nav-${id}`} 
-                role="tabpanel" 
-                aria-labelledby={`nav-${id}-tab`} 
+        <Conditional test={visible}>
+            <div
+                className={'tab-pane fade show ' + (selected ? 'active' : '')}
+                id={`nav-${id}`}
+                role="tabpanel"
+                aria-labelledby={`nav-${id}-tab`}
                 tabIndex="0"
             >
                 {content}
             </div>
-        </>
+        </Conditional>
     )
 }
 
