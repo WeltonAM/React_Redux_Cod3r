@@ -3,6 +3,7 @@ aside.menu-area {
     box-shadow: 
         2px 0 10px rgba(0, 0, 0, 0.12),
         2px 0 15px rgba(0, 0, 0, 0.09);
+    height: 100%;
 }
 
 .menu a {

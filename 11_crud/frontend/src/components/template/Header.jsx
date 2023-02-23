@@ -1,9 +1,6 @@
 import './Header.css'
 
 const Header = ({icon, title, subtitle}) => {
-
-  console.log(icon)
-  
   return (
     <header className='flex header d-none d-sm-flex flex-column'>
         <h1 className='mt-3'>
